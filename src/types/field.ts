@@ -1,12 +1,5 @@
-export enum FieldType {
-  TEXT = "text",
-  TEXTAREA = "textarea",
-  NUMBER = "number",
-  DATE = "date",
-  BOOLEAN = "boolean",
-  MULTI_SELECT = "multi-select",
-  SINGLE_SELECT = "single-select",
-}
+export type FieldType = "text" | "textarea" | "number" | "date" | "boolean" | "multi-select" | "single-select";
+
 
 export interface FieldOption {
   id: string;
