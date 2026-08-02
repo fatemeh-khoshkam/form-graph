@@ -1,8 +1,8 @@
-### ADR-004: Edge Model
+### 004-ADR : Edge Model
 
 Status: Accepted
 
-#### Context
+#### Context:
 
 The form branches, a question can lead to different next questions depending on the answer so I need to store the arrows (edges) between questions. There were two places to put them.
 
@@ -40,11 +40,11 @@ form = {
 
 
 
-#### Decision
+#### Decision:
 
 Edges live in their own list on the form (Option 1).
 
-#### Reasoning
+#### Reasoning:
 
 Deletion is the deciding factor. When a user deletes a question (say q3):
 
@@ -55,7 +55,7 @@ All arrows live in one list, so a single filter finds and removes both the ones 
 
 Cycle detection does not decide this: both shapes support the graph algorithms about equally, so deletion is the stronger reason.
 
-#### Consequences
+#### Consequences:
 
 Easier: deleting a question is a single filter, and all edges live in one place (a single source of truth) each edge already carries `source`/`target`, so it drops straight into React Flow's `edges` prop with no field mapping.
 
