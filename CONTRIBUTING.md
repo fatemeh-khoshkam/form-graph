@@ -7,7 +7,6 @@ worth knowing before making a change.
 > **Note:** This project is a work in progress. Sections on testing and the full
 > pull-request process will expand as the project matures.
 
-
 ## Commit Messages
 
 This project follows the [Conventional Commits](https://www.conventionalcommits.org/)
@@ -27,7 +26,6 @@ format:
 - `chore` — tooling, config, or dependency maintenance
 - `perf` — a performance-focused change
 - `ci` — CI/CD pipeline changes
-
 
 **Rules:**
 

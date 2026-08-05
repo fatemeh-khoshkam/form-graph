@@ -1,5 +1,5 @@
-export type FieldType = "text" | "textarea" | "number" | "date" | "boolean" | "multi-select" | "single-select";
-
+export type FieldType =
+  "text" | "textarea" | "number" | "date" | "boolean" | "multi-select" | "single-select";
 
 export interface FieldOption {
   id: string;

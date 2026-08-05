@@ -83,7 +83,6 @@ flowchart TD
 - Branches can merge
 - Safe expression evaluator (no `eval()`)
 
-
 ## ✏️ Content Editor
 
 - Rich text editor
@@ -92,13 +91,11 @@ flowchart TD
 - Required toggle
 - Validation rule editor
 
-
 ## 💾 State & Persistence
 
 - Undo / Redo
 - Local Storage backup
 - Export / Import JSON
-
 
 ## 📊 Responses
 
@@ -111,14 +108,14 @@ flowchart TD
 
 # 🛠️ Tech Stack & Why
 
-| Technology | Why I Chose It | Problem It Solves |
-|------------|----------------|-------------------|
-| **Next.js** | Full-stack framework with frontend and backend in one repository. | Provides routing, API routes, and deployment without maintaining a separate backend. |
-| **React Flow** | Built specifically for node-based editors. | Eliminates weeks of work implementing dragging, edges, zooming, minimap, and connection handles. |
-| **Zustand** | Lightweight global state management with selectors. | Shares one form schema across Workflow, Content, Preview, and Responses without prop drilling while minimizing re-renders. |
-| **Immer** | Simplifies immutable updates. | Makes deeply nested state updates concise and enables efficient undo/redo through structural sharing. |
-| **Zod** | Runtime validation with TypeScript inference. | Validates external data at runtime and keeps TypeScript types synchronized with schemas. |
-| **React Hook Form** | High-performance form management. | Uses uncontrolled inputs to minimize re-renders and integrates seamlessly with Zod. |
+| Technology          | Why I Chose It                                                    | Problem It Solves                                                                                                          |
+| ------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Next.js**         | Full-stack framework with frontend and backend in one repository. | Provides routing, API routes, and deployment without maintaining a separate backend.                                       |
+| **React Flow**      | Built specifically for node-based editors.                        | Eliminates weeks of work implementing dragging, edges, zooming, minimap, and connection handles.                           |
+| **Zustand**         | Lightweight global state management with selectors.               | Shares one form schema across Workflow, Content, Preview, and Responses without prop drilling while minimizing re-renders. |
+| **Immer**           | Simplifies immutable updates.                                     | Makes deeply nested state updates concise and enables efficient undo/redo through structural sharing.                      |
+| **Zod**             | Runtime validation with TypeScript inference.                     | Validates external data at runtime and keeps TypeScript types synchronized with schemas.                                   |
+| **React Hook Form** | High-performance form management.                                 | Uses uncontrolled inputs to minimize re-renders and integrates seamlessly with Zod.                                        |
 
 ![Why this stack?](./docs/images/why%20this%20stack.png)
 
@@ -128,11 +125,11 @@ flowchart TD
 
 The most important architectural decisions are documented as ADRs.
 
-| ADR | Decision | Summary |
-|-----|----------|---------|
-| [ADR-001](./docs/adr/001-dag-vs-linked-list.md) | DAG over Linked List | A Directed Acyclic Graph supports branching, merging, and multiple execution paths, making it ideal for conditional form logic. A linked list only represents a linear sequence of questions. |
-| [ADR-002](./docs/adr/002-custom-evaluator-vs-eval.md) | Custom Expression Evaluator over `eval()` | `eval()` can execute arbitrary JavaScript and introduces serious security risks. A custom evaluator safely parses and evaluates only whitelisted operators, making execution predictable and secure. |
-| [ADR-003](./docs/adr/003-zustand-vs-redux.md) | Zustand over Redux | Zustand provides a much simpler API with minimal boilerplate while still offering selector-based subscriptions. For this project's scope, it delivers the required performance without Redux's additional complexity. |
+| ADR                                                   | Decision                                  | Summary                                                                                                                                                                                                               |
+| ----------------------------------------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ADR-001](./docs/adr/001-dag-vs-linked-list.md)       | DAG over Linked List                      | A Directed Acyclic Graph supports branching, merging, and multiple execution paths, making it ideal for conditional form logic. A linked list only represents a linear sequence of questions.                         |
+| [ADR-002](./docs/adr/002-custom-evaluator-vs-eval.md) | Custom Expression Evaluator over `eval()` | `eval()` can execute arbitrary JavaScript and introduces serious security risks. A custom evaluator safely parses and evaluates only whitelisted operators, making execution predictable and secure.                  |
+| [ADR-003](./docs/adr/003-zustand-vs-redux.md)         | Zustand over Redux                        | Zustand provides a much simpler API with minimal boilerplate while still offering selector-based subscriptions. For this project's scope, it delivers the required performance without Redux's additional complexity. |
 
 ---
 
