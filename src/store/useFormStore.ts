@@ -71,6 +71,12 @@ const useFormStore = create<FormStore>()(
       set((state) => {
         state.form.fields = state.form.fields.filter((f) => f.id !== id);
         state.form.edges = state.form.edges.filter((e) => e.source !== id && e.target !== id);
+
+        // If we deleted the start field, its id now dangles — repoint it to the
+        // first remaining field (or "" if none are left). Otherwise leave it alone.
+        if (state.form.startFieldId === id) {
+            state.form.startFieldId = state.form.fields[0]?.id ?? "";
+        }
       }),
 
     addEdge: (edge) =>
