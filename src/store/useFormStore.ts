@@ -75,7 +75,7 @@ const useFormStore = create<FormStore>()(
         // If we deleted the start field, its id now dangles — repoint it to the
         // first remaining field (or "" if none are left). Otherwise leave it alone.
         if (state.form.startFieldId === id) {
-            state.form.startFieldId = state.form.fields[0]?.id ?? "";
+          state.form.startFieldId = state.form.fields[0]?.id ?? "";
         }
       }),
 
